@@ -1,0 +1,10 @@
+Function Test-ComputerInfo {
+[CmdletBinding()]
+Param()
+
+$PCName=(Get-CimInstance -ClassName Win32_ComputerSystem).Name
+$Workgroup=(Get-WmiObject -Class Win32_ComputerSystem).Workgroup
+
+$PCName -eq "ROBOT-12002" #this changes
+$Workgroup -eq "InTouch"
+}
