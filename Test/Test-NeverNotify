@@ -1,0 +1,3 @@
+function Test-NeverNotify{
+(Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").EnableLUA -eq 0
+}
