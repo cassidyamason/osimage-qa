@@ -1,0 +1,3 @@
+function Test-TrendMicro { 
+(Get-ItemProperty "HKLM:\SOFTWARE\WOW6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\Misc.").ProgramVer -eq "11.0"
+}
