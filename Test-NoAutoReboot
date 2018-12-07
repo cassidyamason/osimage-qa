@@ -1,0 +1,4 @@
+Function Test-NoAutoReboot
+		{
+		(Get-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU").NoAutoRebootWithLoggedOnUsers -eq 1
+}
