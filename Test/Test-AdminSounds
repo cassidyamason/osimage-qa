@@ -1,0 +1,7 @@
+function Test-AdminSounds {
+  
+((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation").DisableStartupSound -eq 1) -and `
+                 ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System").DisableStartupSound -eq 1) -and `
+((Get-ItemProperty "HKCU:\AppEvents\Schemes")."(default)" -eq ".None")
+}
+    
