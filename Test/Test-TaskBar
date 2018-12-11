@@ -1,0 +1,5 @@
+function Test-TaskBar {
+
+(Get-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3").Settings[8] -eq 3
+
+}
