@@ -1,0 +1,47 @@
+function Test-WindowsUpdate{ 
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\wuauserv").FailureActions[20] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\wuauserv").FailureActions[28] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\wuauserv").FailureActions[36] -eq 1) 
+
+}
+
+
+
+function Test-WiFiAdaptor {
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\WlanSvc").FailureActions[20] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\WlanSvc").FailureActions[28] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\WlanSvc").FailureActions[36] -eq 1) 
+
+}
+
+
+function Test-DHCP {
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dhcp").FailureActions[20] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dhcp").FailureActions[28] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dhcp").FailureActions[36] -eq 1) 
+
+}
+
+
+
+function Test-DNS {
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache").FailureActions[20] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache").FailureActions[28] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache").FailureActions[36] -eq 1) 
+
+}
+
+
+function Test-Server {
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer").FailureActions[20] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer").FailureActions[28] -eq 1) -and `
+((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer").FailureActions[36] -eq 1) 
+
+}
+
+
+function Test-CriticalServices{
+
+(Test-WindowsUpdate) -and (Test-WiFiAdaptor) -and (Test-DHCP) -and (Test-DNS) -and (Test-Server)
+
+}
