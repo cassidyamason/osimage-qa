@@ -1,0 +1,6 @@
+function Test-BSOD {
+
+(New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters" -Name "CrashOnCtrlScroll" -PropertyType DWord -Value 1) -and `
+
+(New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters" -Name "CrashOnCtrlScroll" -PropertyType DWord -Value 1)
+}
