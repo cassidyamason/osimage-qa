@@ -1,4 +1,4 @@
-function Test-DeleteBSOD {
+function Set-DeleteBSOD {
 
 (Remove-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters" -Name "CrashOnCtrlScroll") 
 
