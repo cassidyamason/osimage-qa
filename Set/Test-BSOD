@@ -1,4 +1,4 @@
-function Test-BSOD {
+function Set-BSOD {
 
 (New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters" -Name "CrashOnCtrlScroll" -PropertyType DWord -Value 1) -and `
 
